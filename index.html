@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>InnoFest 2026</title>
+
+<style>
+
+body{
+margin:0;
+font-family:Arial;
+background:#f1f1f1;
+text-align:center;
+}
+
+/* HEADER */
+
+.header{
+background:#6a3dbf;
+color:white;
+padding:20px;
+}
+
+.header img{
+width:70px;
+}
+
+.header h2{
+margin:10px 0;
+}
+
+.sub{
+font-size:14px;
+opacity:0.9;
+}
+
+/* WELCOME */
+
+.welcome{
+background:linear-gradient(90deg,#8a2be2,#c43cff);
+color:white;
+padding:35px;
+margin:20px;
+border-radius:10px;
+}
+
+.btn{
+background:white;
+color:black;
+padding:10px 20px;
+border:none;
+border-radius:6px;
+margin-top:10px;
+cursor:pointer;
+font-weight:bold;
+}
+
+/* SECTION */
+
+.section{
+margin:40px 0;
+}
+
+.section h2{
+margin-bottom:20px;
+}
+
+/* CARD */
+
+.card{
+background:white;
+width:260px;
+margin:auto;
+padding:15px;
+border-radius:10px;
+box-shadow:0 0 10px rgba(0,0,0,0.2);
+}
+
+.card img{
+width:100%;
+border-radius:8px;
+}
+
+.register{
+margin-top:10px;
+background:#111827;
+color:white;
+padding:10px;
+border-radius:6px;
+display:inline-block;
+cursor:pointer;
+transition:0.3s;
+}
+
+.register:hover{
+background:#6a3dbf;
+}
+
+/* EVENT DETAILS */
+
+.details{
+background:#fafafa;
+padding:40px;
+}
+
+.detail-item{
+margin:20px;
+}
+
+.map{
+width:90%;
+height:200px;
+border:0;
+}
+
+/* FOOTER */
+
+.footer{
+background:#e5e5e5;
+padding:20px;
+margin-top:20px;
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- HEADER -->
+
+<div class="header">
+
+<img src="https://upload.wikimedia.org/wikipedia/en/thumb/7/73/RVS_Logo.png/220px-RVS_Logo.png">
+
+<h2>RVS Technical Campus - Coimbatore</h2>
+
+<div class="sub">
+(An Autonomous Institution)<br>
+Approved by AICTE | Affiliated to Anna University
+</div>
+
+</div>
+
+<!-- WELCOME -->
+
+<div class="welcome">
+
+<h2>Welcome to InnoFest 2026</h2>
+
+<p>
+Join us for the most innovative technical event of the year.
+Discover, learn, and compete.
+</p>
+
+<button class="btn">Explore Events</button>
+
+</div>
+
+<!-- TECH EVENTS -->
+
+<div class="section">
+
+<h2>Technical Event Highlights</h2>
+
+<div class="card">
+
+<img id="techImage" src="https://images.unsplash.com/photo-1518770660439-4636190af475">
+
+<h3 id="techTitle">Prompt Creation</h3>
+
+</div>
+
+<div class="register" onclick="openTechForm()">Register Now</div>
+
+</div>
+
+<!-- NON TECH EVENTS -->
+
+<div class="section">
+
+<h2>Non-Technical Event Highlights</h2>
+
+<div class="card">
+
+<img id="nonImage" src="https://images.unsplash.com/photo-1507874457470-272b3c8d8ee2">
+
+<h3 id="nonTitle">Music Show</h3>
+
+</div>
+
+<div class="register" onclick="openNonTechForm()">Register Now</div>
+
+</div>
+
+<!-- EVENT DETAILS -->
+
+<div class="details">
+
+<h2>Event Details</h2>
+
+<p>Get ready for an immersive experience in Technology and Innovation.</p>
+
+<div class="detail-item">
+
+<b>Date & Time</b><br>
+12 April 2026<br>
+9:00 AM
+
+</div>
+
+<div class="detail-item">
+
+<b>Attendees</b><br>
+Students and Tech Enthusiasts
+
+</div>
+
+<div class="detail-item">
+
+<b>Location</b><br>
+RVS Technical Campus, Coimbatore
+
+</div>
+
+<iframe
+class="map"
+src="https://maps.google.com/maps?q=RVS%20Technical%20Campus%20Coimbatore&t=&z=13&ie=UTF8&iwloc=&output=embed">
+</iframe>
+
+</div>
+
+<!-- FOOTER -->
+
+<div class="footer">
+
++91 7500000000 &nbsp;&nbsp;&nbsp;
+innofest2026@gmail.com
+
+</div>
+
+<script>
+
+/* TECH EVENT SLIDER */
+
+var techEvents=[
+{title:"Prompt Creation",img:"https://images.unsplash.com/photo-1518770660439-4636190af475"},
+{title:"Hackathon",img:"https://images.unsplash.com/photo-1519389950473-47ba0277781c"},
+{title:"Coding Contest",img:"https://images.unsplash.com/photo-1555949963-aa79dcee981c"}
+];
+
+var techIndex=0;
+
+setInterval(function(){
+
+techIndex++;
+
+if(techIndex>=techEvents.length){
+techIndex=0;
+}
+
+document.getElementById("techImage").src=techEvents[techIndex].img;
+document.getElementById("techTitle").innerHTML=techEvents[techIndex].title;
+
+},3000);
+
+
+/* NON TECH EVENT SLIDER */
+
+var nonEvents=[
+{title:"Music Show",img:"https://images.unsplash.com/photo-1507874457470-272b3c8d8ee2"},
+{title:"Dance Battle",img:"https://images.unsplash.com/photo-1506157786151-b8491531f063"},
+{title:"Photography",img:"https://images.unsplash.com/photo-1492724441997-5dc865305da7"}
+];
+
+var nonIndex=0;
+
+setInterval(function(){
+
+nonIndex++;
+
+if(nonIndex>=nonEvents.length){
+nonIndex=0;
+}
+
+document.getElementById("nonImage").src=nonEvents[nonIndex].img;
+document.getElementById("nonTitle").innerHTML=nonEvents[nonIndex].title;
+
+},3500);
+
+
+/* GOOGLE FORM LINKS */
+
+function openTechForm(){
+
+window.open("https://forms.gle/gwRsLwLBEeem8XK67","_blank");
+
+}
+
+function openNonTechForm(){
+
+window.open("https://forms.gle/exampleNonTech123","_blank");
+
+}
+
+</script>
+
+</body>
+</html>
